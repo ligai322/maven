@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!-- 项目标识 -->
+  <groupId>cn.com.wegis</groupId>
+  <artifactId>ClipImage</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  
+  <name>ClipImage</name>
+  <url>http://maven.apache.org</url>
+   <modules>
+		<module>src</module>
+  </modules>
+  <!-- maven仓库 -->
+  <repositories>
+    <repository>
+      <id>lychie-maven-repo</id>
+      <url>https://raw.githubusercontent.com/lychie/maven-repo/master/snapshots</url>
+    </repository>
+    <repository>
+      <id>typesafe</id>
+      <url>http://repo.typesafe.com/typesafe/maven-releases/</url>
+    </repository>
+    <repository>
+      <id>muco</id>
+      <url>https://raw.githubusercontent.com/muchcontact/maven-repo/master/releases/</url>
+    </repository>
+    <repository>
+      <id>geomajas</id>
+      <url>http://maven.geomajas.org</url>
+    </repository>
+    <repository>
+      <id>egova</id>
+      <url>http://192.168.177.23:8081/nexus/content/groups/public/</url>
+	  <snapshots>
+		<enabled>false</enabled>
+	  </snapshots>
+    </repository>
+  </repositories>
+  
+  <properties>
+  </properties>
+  
+ <profiles>
+ </profiles>
+  
+  <!-- 项目依赖 -->
+  <dependencyManagement>
+    <dependencies><!-- https://mvnrepository.com/artifact/org.gdal/gdal -->
+		<dependency>
+			<groupId>org.gdal</groupId>
+			<artifactId>gdal</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+        <!-- jts -->
+        <dependency>
+            <groupId>com.vividsolutions</groupId>
+            <artifactId>jts</artifactId>
+            <version>1.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openpnp</groupId>
+            <artifactId>opencv</artifactId>
+            <version>3.4.2-0</version>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
+    <build>
+        <sourceDirectory>main/java</sourceDirectory>
+		<testSourceDirectory>test/java</testSourceDirectory>
+		<resources>
+		  <resource>
+			<directory>main/resources</directory>
+			<includes>
+			  <include>*.*</include>
+			</includes>
+		  </resource>
+		</resources>
+		<testResources>
+		  <testResource>
+			<directory>test/resources</directory>
+			<includes>
+			  <include>*.*</include>
+			</includes>
+		  </testResource>
+		</testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
