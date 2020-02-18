@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>cn.com.wegis</groupId>
-  <artifactId>wegis-clipimage</artifactId>
+  <artifactId>wegisclipimage-proj</artifactId>
   <versioning>
     <versions>
       <version>1.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20200218120552</lastUpdated>
+    <lastUpdated>20200218120549</lastUpdated>
   </versioning>
 </metadata>
